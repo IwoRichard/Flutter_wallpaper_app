@@ -25,7 +25,13 @@ class _BottomNavMobileState extends State<BottomNavMobile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: screens[currentIndex],
+      body: IndexedStack(
+        index: currentIndex,
+        children: [
+          const HomePage(),
+          const ExplorePage(),
+        ]
+      ),
       bottomNavigationBar: BottomNavigationBar(
         //elevation: 10,
           selectedItemColor: primary,
